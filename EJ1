@@ -1,0 +1,34 @@
+<?php
+
+
+  if(isset($_POST) && !empty($_POST['numero'])){
+
+            $numero=$_POST['numero'];
+
+            for ($x=1; $x <= $numero ; $x++) {
+              if ($numero%$x == 0) {
+                echo $x.'</br>';
+
+              }
+            }
+          }
+
+
+ ?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form  action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+      <p>Numero:<input type="text" name="numero"></p>
+     <p><input type="submit" name="submit" value="Sign up"></p>
+    </form>
+
+  </body>
+</html>
