@@ -1,0 +1,33 @@
+<?php
+
+$array1=['Laguens','Orts','Gonzalez','Olle'];
+$array2=['Raya','Fernandez','Oltra','Cuadrado'];
+
+sort($array1);
+sort($array2);
+
+
+echo "Primer array </br></br>";
+for ($x=0; $x < count($array1); $x++) {
+  echo $array1[$x]."</br>";
+}
+echo "</br>Segundo array </br></br>";
+for ($x=0; $x < count($array2); $x++) {
+  echo $array2[$x]."</br>";
+}
+
+
+
+ ?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
