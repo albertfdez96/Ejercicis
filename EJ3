@@ -1,0 +1,301 @@
+<?php
+
+    session_start();
+
+
+
+if (isset($_POST) && !empty($_POST['cajas'])) {
+  $cajass=$_POST['cajas'];
+
+  if ($cajass <=  10) {
+
+$_SESSION['cajass']=$cajass;
+
+      header('Location: EJ3.2.php');
+  }else {
+
+  echo "Tiene que ser entre 1 y 10";
+}}
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <table>
+      <form  action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+        <p>Numero de cajas:<input type="text" name="cajas"></p>
+       <p><input type="submit" name="submit" value="Sign up"></p>
+      </form>
+
+
+
+    </table>
+
+  </body>
+</html>
+
+
+---------------------------------------------------------------------
+<?php
+session_start();
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <form  action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+
+    <?php
+    $cont = 1;
+
+
+
+    for($i=1; $i <= $_SESSION['cajass']; $i++) {
+
+
+      echo '
+
+
+        <p>Numero:<input type="text" name="numero'.$cont.'"></p>
+
+
+    ';
+
+
+
+      //$_SESSION['array'][$i]=$arrayy[$i];
+
+
+
+    $cont ++;
+  } ?>
+
+  <p><input type="submit" name="submit1" value="Sign up"></p>
+  </form>
+
+
+  <?php
+
+  if (isset($_POST)
+      && !empty($_POST['numero1'])) {
+
+        $caja1=$_POST['numero1'];
+        $caja2=$_POST['numero2'];
+        $caja3=$_POST['numero3'];
+        $caja4=$_POST['numero4'];
+        $caja5=$_POST['numero5'];
+        $caja6=$_POST['numero6'];
+        $caja7=$_POST['numero7'];
+        $caja8=$_POST['numero8'];
+        $caja9=$_POST['numero9'];
+        $caja10=$_POST['numero10'];
+
+
+
+  $_SESSION['numero1']=$caja1;
+  $_SESSION['numero2']=$caja2;
+  $_SESSION['numero3']=$caja3;
+  $_SESSION['numero4']=$caja4;
+  $_SESSION['numero5']=$caja5;
+  $_SESSION['numero6']=$caja6;
+  $_SESSION['numero7']=$caja7;
+  $_SESSION['numero8']=$caja8;
+  $_SESSION['numero9']=$caja9;
+  $_SESSION['numero10']=$caja10;
+
+
+  header('Location:EJ3.3.php');
+
+
+    }
+
+
+
+
+  ?>
+
+
+  </body>
+</html>
+---------------------------------------------------------
+<?php
+
+session_start();
+
+
+echo "<table border=1><tr>";
+
+if (!empty($_SESSION['numero1'])) {
+  echo "<td>".$_SESSION['numero1']."</td>";
+}
+if (!empty($_SESSION['numero2'])) {
+  echo "<td>".$_SESSION['numero2']."</td>";
+}
+if (!empty($_SESSION['numero3'])) {
+  echo "<td>".$_SESSION['numero3']."</td>";
+}
+if (!empty($_SESSION['numero4'])) {
+  echo "<td>".$_SESSION['numero4']."</td>";
+}
+if (!empty($_SESSION['numero5'])) {
+  echo "<td>".$_SESSION['numero5']."</td>";
+}
+if (!empty($_SESSION['numero6'])) {
+  echo "<td>".$_SESSION['numero6']."</td>";
+}
+if (!empty($_SESSION['numero7'])) {
+  echo "<td>".$_SESSION['numero7']."</td>";
+}
+if (!empty($_SESSION['numero8'])) {
+  echo "<td>".$_SESSION['numero8']."</td>";
+}
+if (!empty($_SESSION['numero9'])) {
+  echo "<td>".$_SESSION['numero9']."</td>";
+}
+if (!empty($_SESSION['numero10'])) {
+  echo "<td>".$_SESSION['numero10']."</td>";
+}
+
+echo "</tr></table>";
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==1) {
+    $i=2;
+  }
+  if ($_SESSION['numero1'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero1']." esta repetido";
+
+  }
+}
+
+/*
+for ($i=0; $i <= 10; $i++) {
+  if ($i==2) {
+    $i=3;
+  }
+  if ($_SESSION['numero2'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero2']." esta repetido";
+
+  }
+}
+
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==3) {
+    $i=4;
+  }
+  if ($_SESSION['numero3'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero3']." esta repetido";
+
+  }
+}
+
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==4) {
+    $i=5;
+  }
+  if ($_SESSION['numero4'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero4']." esta repetido";
+
+  }
+}
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==5) {
+    $i=6;
+  }
+  if ($_SESSION['numero5'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero5']." esta repetido";
+
+  }
+}
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==6) {
+    $i=7;
+  }
+  if ($_SESSION['numero6'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero6']." esta repetido";
+
+  }
+}
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==7) {
+    $i=8;
+  }
+  if ($_SESSION['numero7'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero7']." esta repetido";
+
+  }
+}
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==8) {
+    $i=9;
+  }
+  if ($_SESSION['numero8'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero8']." esta repetido";
+
+  }
+}
+for ($i=0; $i <= 10; $i++) {
+  if ($i==9) {
+    $i=10;
+  }
+  if ($_SESSION['numero9'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero9']." esta repetido";
+
+  }
+}
+
+
+for ($i=0; $i <= 10; $i++) {
+  if ($i==10) {
+    $i=11;
+  }
+  if ($_SESSION['numero10'] == $_SESSION['numero'.$i]) {
+    echo "El ".$_SESSION['numero10']." esta repetido";
+
+  }
+}
+
+*/
+
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
