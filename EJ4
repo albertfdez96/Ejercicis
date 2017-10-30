@@ -1,0 +1,160 @@
+<?php
+session_start();
+
+  if($_POST){
+    $_random1=rand(1,6);
+    $_SESSION['random1']=$_random1;
+    header('Location:EJ4.2.php');
+    if ($_random1 == 1) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+    if ($_random1 == 2) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+    if ($_random1 == 3) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+    if ($_random1 == 4) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+    if ($_random1 == 5) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+    if ($_random1 == 6) {
+      echo "<img scr=imagenes/dado-1.png>";
+    }
+
+  }
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+      <input type="submit" name="submit" value="Dado atacate">
+    </form>
+
+  </body>
+</html>
+-----------------------------------------------------
+<?php
+session_start();
+echo "El dado atacante a sacado: ".$_SESSION['random1'];
+
+if ($_SESSION['random1']== 1) {
+  echo '<img src="/imagenes/dado-1.png"/>';
+}
+if ($_SESSION['random1']== 2) {
+  echo '<img src="/imagenes/dado-2.png"/>';
+}
+if ($_SESSION['random1'] == 3) {
+  echo '<img src="/imagenes/dado-3.png"/>';
+}
+if ($_SESSION['random1'] == 4) {
+  echo '<img src="/imagenes/dado-4.png"/>';
+}
+if ($_SESSION['random1'] == 5) {
+  echo '<img src="/imagenes/dado-5.png"/>';
+}
+if ($_SESSION['random1'] == 6) {
+  echo '<img src="/imagenes/dado-6.png"/>';
+}
+
+if($_POST){
+  $_random2=rand(1,6);
+  $_SESSION['random2']=$_random2;
+  header('Location:EJ4.3.php');
+
+}
+
+ ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+      <input type="submit" name="submit" value="Dado defensor">
+    </form>
+
+  </body>
+</html>
+-----------------------------------------------
+<?php
+session_start();
+echo "El dado atacante a sacado: ".$_SESSION['random1'];
+
+if ($_SESSION['random1']== 1) {
+  echo '<img src="/imagenes/dado-1.png"/>';
+}
+if ($_SESSION['random1']== 2) {
+  echo '<img src="/imagenes/dado-2.png"/>';
+}
+if ($_SESSION['random1'] == 3) {
+  echo '<img src="/imagenes/dado-3.png"/>';
+}
+if ($_SESSION['random1'] == 4) {
+  echo '<img src="/imagenes/dado-4.png"/>';
+}
+if ($_SESSION['random1'] == 5) {
+  echo '<img src="/imagenes/dado-5.png"/>';
+}
+if ($_SESSION['random1'] == 6) {
+  echo '<img src="/imagenes/dado-6.png"/>';
+}
+
+echo "</br>";
+echo "El dado defensor a sacado: ".$_SESSION['random2'];
+
+if ($_SESSION['random2']== 1) {
+  echo '<img src="/imagenes/dado-1.png"/>';
+}
+if ($_SESSION['random2']== 2) {
+  echo '<img src="/imagenes/dado-2.png"/>';
+}
+if ($_SESSION['random2'] == 3) {
+  echo '<img src="/imagenes/dado-3.png"/>';
+}
+if ($_SESSION['random2'] == 4) {
+  echo '<img src="/imagenes/dado-4.png"/>';
+}
+if ($_SESSION['random2'] == 5) {
+  echo '<img src="/imagenes/dado-5.png"/>';
+}
+if ($_SESSION['random2'] == 6) {
+  echo '<img src="/imagenes/dado-6.png"/>';
+}
+
+if ($_SESSION['random1'] > $_SESSION['random2']) {
+  echo "</br>Ha ganado el dado atacante </br>";
+}else {
+  echo "</br>Ha ganado el dado defensor</br>";
+}
+
+if ($_SESSION['random1'] == $_SESSION['random2']) {
+echo "Los 2 dados estan igualados";
+}
+
+ ?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
